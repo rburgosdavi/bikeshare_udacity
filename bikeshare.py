@@ -12,7 +12,7 @@ def get_filters():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     print('\nHello! Let\'s explore some US bikeshare data!\n')
-    # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
+
 
     while True:
         city = input('\n1.Select the CITY to filter, the options are:\n \nChicago\n \nNew York City\n \nWashington\n \n1. Please enter the name of the City: ').lower()
@@ -22,7 +22,7 @@ def get_filters():
         else:
             break
 
-    # get user input for month (all, january, february, ... , june)
+    # get user input for month (all, january, february, march, abril, june, july ...)
 
     while True:
         month = input('\n2.Select the MONTH to filter, the options are:\n \nJanuary\n \nFebruary\n \nMarch\n \nApril\n \nMay\n \nJune\n \nall (for no time filter)\n \n2. Please enter the name of the Month: ').lower()
@@ -184,6 +184,9 @@ def user_stats(df):
     print('-'*40)
 
 def five_lines_data(df, city):
+    '''
+    Function to ask the user if he wants to see 5 more lines of data.
+    '''
     count = 0
     five_data = input('\nWould you like to see more information about: {}? Enter yes or no.\n'.format(city.title()))
     while five_data.lower() == 'yes':
