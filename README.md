@@ -1,17 +1,20 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
-
-### Date created
-Include the date you created this project and README file.
+### Date Created
+31 August 2021
 
 ### Project Title
-Replace the Project Title
+Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+The Bikeshare project was developed for the Programming for Data Science course at Udacity. The project displays descriptive statistics on the most common travel times, most popular stations and trip duration. Users can interactively select the cities of Chicago, New York City or Washington, as well as a month and day of the week. Once this is done, the statistics are displayed in the console. 
 
 ### Files used
-Include the files used
+Files used :
+- chicago.csv
+- washington.csv
+- new_york_city.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+https://stackoverflow.com/questions/52938818/how-to-display-increment-raw-data-using-iloc-depending-on-user-input
+https://stackoverflow.com/questions/15943769/how-do-i-get-the-row-count-of-a-pandas-dataframe
+https://stackoverflow.com/questions/62201427/dt-date-returns-attributeerror-can-only-use-dt-accessor-with-datetimelike-valu
 
