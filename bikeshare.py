@@ -4,6 +4,8 @@ import time
 
 
 MONTH_LIST = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+DAY_LIST = ['all', 'monday', 'tuesday', 'wednesday', 'friday', 'saturday', 'sunday']
+
 
 def get_filters():
     """
@@ -39,13 +41,15 @@ def get_filters():
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
 
-    while True:
-        day = input('\n3.Select the DAY to filter, the options are:\n \nMonday\n \nTuesday\n \nWednesday\n \nThursday\n \nFriday\n \nSaturday\n \nSunday\n \nall (for no time filter)\n \n3. Please enter the name of the Day: ').lower()
-        if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all'):
-            print('\n........Enter correctly the name of the Day you need to filter........')
-            continue
+    day_select = ''
+    while day_select.lower() not in DAY_LIST:
+        day_select = input('\n3.Select the DAY to filter, the options are:\n \nMonday\n \nTuesday\n \nWednesday\n \nThursday\n \nFriday\n \nSaturday\n \nSunday\n \nall (for no time filter)\n \n3. Please enter the name of the Day: ')
+        if day_select.lower() in DAY_LIST:
+            #We were able to get the name of the month to analyze data.
+            day = day_select.lower()
         else:
-            break
+            #We were not able to get the name of the month to analyze data so we continue the loop.
+            print('\n........Enter correctly the name of the Day you need to filter........')
 
     print('-'*40 + ' 1. Data entered correctly')
     return city, month, day
