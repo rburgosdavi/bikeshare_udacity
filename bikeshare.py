@@ -2,6 +2,9 @@ import pandas as pd
 import datetime
 import time
 
+
+MONTH_LIST = ['all', 'january', 'february', 'march', 'april', 'may', 'june']
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -24,19 +27,21 @@ def get_filters():
 
     # get user input for month (all, january, february, ... , june)
 
-    while True:
-        month = input('\n2.Select the MONTH to filter, the options are:\n \nJanuary\n \nFebruary\n \nMarch\n \nApril\n \nMay\n \nJune\n \nall (for no time filter)\n \n2. Please enter the name of the Month: ').lower()
-        if month not in ('january', 'february', 'march', 'april', 'may', 'june', 'all'):
-            print('\n........Enter correctly the name of the Month you want to filter........')
-            continue
+    month_select = ''
+    while month_select.lower() not in MONTH_LIST:
+        month_select = input('\n2.Select the MONTH to filter, the options are:\n \nJanuary\n \nFebruary\n \nMarch\n \nApril\n \nMay\n \nJune\n \nall (for no time filter)\n \n2. Please enter the name of the Month: ')
+        if month_select.lower() in MONTH_LIST:
+            #We were able to get the name of the month to analyze data.
+            month = month_select.lower()
         else:
-            break
+            #We were not able to get the name of the month to analyze data so we continue the loop.
+            print('\n........Enter correctly the name of the Month you want to filter........')
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
 
     while True:
         day = input('\n3.Select the DAY to filter, the options are:\n \nMonday\n \nTuesday\n \nWednesday\n \nThursday\n \nFriday\n \nSaturday\n \nSunday\n \nall (for no time filter)\n \n3. Please enter the name of the Day: ').lower()
-        if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'saturday', 'all'):
+        if day not in ('monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday', 'all'):
             print('\n........Enter correctly the name of the Day you need to filter........')
             continue
         else:
